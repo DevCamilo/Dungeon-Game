@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <title>Dungeon!</title>
+
+    <style>
+    body { font-family: sans-serif; background: none; }
+    a, a:active, a:visited { color: blue; text-decoration: none; }
+    h1 { margin-bottom: 0.1em; }
+    #myCanvas { border: 1px solid #333; }
+    div.leftPanel { width: 250px; float: left; }
+    div.center { text-align: center; }
+    </style>
+
+    <!-- order is important here for dependencies -->
+    <script type="text/javascript" src="utils.js"></script>
+    <script type="text/javascript" src="room.js"></script>
+    <script type="text/javascript" src="dungeon.js"></script>
+    <script type="text/javascript" src="level.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</head>
+<body onload="Initialize()">
+    <h1>Dungeon!</h1>
+
+    <div class="leftPanel">
+        <p>Te mueves con las flechas.
+        <p>
+            Visibilidad:
+            <select id="visibility">
+                <option value="room" selected>Descubrir cada cuarto</option>
+                <option value="los">Linea de Luz</option>
+                <option value="none">Ninguna</option>
+            </select>
+            <br />
+            <button onclick="ResetGame()">Nueva Masmorra</button>
+        </p>
+    </div>
+
+    <div class="rightPanel">
+        <canvas id="myCanvas" width="640" height="480"></canvas>
+    </div>
+</body>
+</html>
